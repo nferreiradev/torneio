@@ -1,0 +1,16 @@
+<html>
+<head>
+<script src="../scripts/php_crud_api_transform.js"></script>
+<script>
+function callback(jsonObject) {
+  jsonObject = php_crud_api_transform(jsonObject);
+  document.getElementById('output').innerHTML = JSON.stringify(jsonObject, undefined, 4);
+}
+</script>
+<script src="/torneio/dist/api.php/torneio?include=modalidade&filter=id_torneio,eq,1&callback=callback" defer="defer"></script>
+</head>
+<body>
+<h1>Hello</h1>
+<pre id="output"></pre>
+</body>
+</html>
